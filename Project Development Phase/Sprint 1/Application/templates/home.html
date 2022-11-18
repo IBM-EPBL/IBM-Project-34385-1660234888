@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Harvest</title>
+    <link rel="stylesheet" href="../static/css/home.css">
+    <link rel="icon" type="image/x-icon" href="../static/img/logo-white-fav.png">
+    <style>
+        .button-style {
+            background-color:darkcyan;
+            color:white;
+            height:3em;
+            width: 10em;
+            border: 1px solid white;
+            font-size: 17px;
+        }
+
+        .button-style:hover {
+            background-color: white;
+            color: darkcyan;
+            border: 1px solid darkcyan;
+            transition-duration: 0.4s;
+            
+        }
+        @keyframes rightFade {
+            from{right:-300px;opacity:0} 
+            to{right:0;opacity:1}
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="bar opened">
+            <Br><br>
+            <img style="animation:move-text ease 0.5s forwards" src="../static/img/logo-black.png" height="100px" width="290px">
+            <br><br><br><br>
+            <div class="icon" id="home" onclick="setActiveTab(this.id)">
+                <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="2.5em" width="2.5em" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M4 4h6v8h-6z"></path>
+                    <path d="M4 16h6v4h-6z"></path>
+                    <path d="M14 12h6v8h-6z"></path>
+                    <path d="M14 4h6v4h-6z"></path>
+                </svg>
+                <span class="text">Home</span>
+            </div>
+            <div class="icon" id="analytics" onclick="setActiveTab(this.id)">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="2.5em" width="2.5em" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 3v17a1 1 0 0 0 1 1h17v-2H5V3H3z"></path>
+                    <path d="M15.293 14.707a.999.999 0 0 0 1.414 0l5-5-1.414-1.414L16 12.586l-2.293-2.293a.999.999 0 0 0-1.414 0l-5 5 1.414 1.414L13 12.414l2.293 2.293z"></path>
+                </svg>
+                <span class="text">Analytics</span>
+            </div>
+            <div class="icon" id="predict-production" onclick="setActiveTab(this.id)">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" height="2.5em" width="2.5em"><path d="M.0022 64C.0022 46.33 14.33 32 32 32H288C305.7 32 320 46.33 320 64C320 81.67 305.7 96 288 96H231.8C241.4 110.4 248.5 126.6 252.4 144H288C305.7 144 320 158.3 320 176C320 193.7 305.7 208 288 208H252.4C239.2 266.3 190.5 311.2 130.3 318.9L274.6 421.1C288.1 432.2 292.3 452.2 282 466.6C271.8 480.1 251.8 484.3 237.4 474L13.4 314C2.083 305.1-2.716 291.5 1.529 278.2C5.774 264.1 18.09 256 32 256H112C144.8 256 173 236.3 185.3 208H32C14.33 208 .0022 193.7 .0022 176C.0022 158.3 14.33 144 32 144H185.3C173 115.7 144.8 96 112 96H32C14.33 96 .0022 81.67 .0022 64V64z" id="mainIconPathAttribute" fill="currentColor"></path></svg>
+                <span class="text">Predict Production</span>
+            </div>
+            <div class="icon" id="prediction-history" onclick="setActiveTab(this.id)">
+                <svg xmlns="http://www.w3.org/2000/svg" stroke-width="0.4" stroke="currentColor" fill="currentColor" stroke-linecap="round" enable-background="new 0 0 10 10" viewBox="0 0 24 24"height="2.5em" width="2.5em">
+                    <path d="M16.4,3.3C12.5,1.1,7.7,1.8,4.6,4.8V3c0-0.6-0.4-1-1-1s-1,0.4-1,1v4.5c0,0.6,0.4,1,1,1h4.5c0.6,0,1-0.4,1-1s-0.4-1-1-1H5.7C7.1,4.9,9.2,4,11.5,4c4.4,0,8,3.6,8,8s-3.6,8-8,8c-0.6,0-1,0.4-1,1s0.4,1,1,1c3.6,0,6.9-1.9,8.7-5C22.9,12.2,21.2,6.1,16.4,3.3z M11.4,8c-0.6,0-1,0.4-1,1v3c0,0.6,0.4,1,1,1h2c0.6,0,1-0.4,1-1s-0.4-1-1-1h-1V9C12.4,8.4,12,8,11.4,8z"/></svg>
+                <span class="text">Prediction History</span>
+            </div>
+            <div class="icon signout" onclick="window.location.pathname='/logout'">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 17" height="2.5em" width="2.5em" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M12 9V7H8V5h4V3l4 3-4 3zm-2 3H6V3L2 1h8v3h1V1c0-.55-.45-1-1-1H1C.45 0 0 .45 0 1v11.38c0 .39.22.73.55.91L6 16.01V13h4c.55 0 1-.45 1-1V8h-1v4z"></path>
+                </svg>
+                <span class="text">Sign Out</span>
+            </div>
+        </div>
+    </div>
+    <div id="tabContent" style="background-color:skyblue;display:flex;justify-content:center;align-items:center;width: 100%;height: 100%;flex-direction: column;">
+
+    </div>
+    <script>
+        var i = 0;
+        var txt = 'We provide a crop production prediction system that estimates the yield for you';
+        var speed = 30; 
+
+        setActiveTab("{{ activeTab }}");
+        function checkInputs() {
+            var state = document.getElementById('state').value;
+            var district = document.getElementById('district').value;
+            var season = document.getElementById('season').value;
+            var crop = document.getElementById('crop').value;
+            var area = document.getElementById('area').value;
+            var crop_year = document.getElementById('crop_year').value;
+            if (state!="Select State" && district!="Select District" && season!="Select Season" && crop!="Select Crop" && area!="" && crop_year!="") {
+                document.getElementById("PredictButton").style["animation"] = "move-text ease 0.5s forwards";
+                document.getElementById("PredictButton").style["display"] = "flex";
+                document.getElementById("EstimatedProduction").style["animation"] = "move-text ease 0.5s forwards";
+                document.getElementById("EstimatedProduction").style["display"] = "flex";
+            }
+            else {
+                if (document.getElementById("PredictButton").style["display"] != "none") {
+                    document.getElementById("PredictButton").style["animation"] = "move-text-out ease 0.5s forwards";
+                    document.getElementById("PredictButton").style["display"] = "flex";
+                    document.getElementById("EstimatedProduction").style["animation"] = "move-text-out ease 0.5s forwards";
+                    document.getElementById("EstimatedProduction").style["display"] = "flex";
+                    
+                }
+                
+            }
+        }
+        function setActiveTab(TabName) {
+            document.getElementById("home").style["background"] = "#c4c8cb40";
+            document.getElementById("analytics").style["background-color"] = "#c4c8cb40";
+            document.getElementById("predict-production").style["background"] = "#c4c8cb40";
+            document.getElementById("prediction-history").style["background"] = "#c4c8cb40";
+            document.getElementById(TabName).style["background-color"] = "#bfbfbf";
+            var home = `
+            <div style="width:80%;height:30%;">                    
+                <h1 style="font-family:'Candara';font-size: 50px;padding: 0px;margin: 0;">Let us help you</h1>
+                <h2>WELCOME TO HEALTHY HARVEST</h2>
+                <p id="description"></p>
+                <div id="predict-button" style="padding:0px;width:70%;display:none;justify-content:space-between;">
+                    <button class="button-style" onclick="setActiveTab('predict-production')">Predict Yield</button>
+                    <!-- <button class="button-style" onclick="setActiveTab('prediction-history')">Prediction History</button> -->
+                </div>
+            </div>
+            `;
+            var predict_production = ``;
+        var analytics = '';
+        var prediction_history = ``;
+            if (TabName=="home") {
+                i = 0;
+                document.getElementById('tabContent').style["background"] = 'radial-gradient( circle farthest-corner at 10% 20%,  rgba(97,186,255,1) 0%, rgba(166,239,253,1) 90.1% )'
+                document.getElementById('tabContent').innerHTML = home;
+                typeWriter();
+            }
+            if (TabName=="analytics") {
+                document.getElementById('tabContent').style["background"] = "skyblue";
+                document.getElementById('tabContent').innerHTML = analytics;
+            }
+            if (TabName=="predict-production") {
+                document.getElementById('tabContent').style["background"] = "skyblue";
+                document.getElementById('tabContent').innerHTML = predict_production;
+            }
+            if (TabName=="prediction-history") { 
+                document.getElementById('tabContent').style["background"] = "skyblue";
+                document.getElementById('tabContent').innerHTML = prediction_history;
+            }
+        }
+
+        function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("description").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+            else {
+                document.getElementById("predict-button").style["animation"] = "rightFade 2s forwards";
+                document.getElementById("predict-button").style["display"] = "flex";
+            }
+        }
+    </script>
+</body>
+</html>
