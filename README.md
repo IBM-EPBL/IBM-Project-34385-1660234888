@@ -10,13 +10,16 @@
   <img src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" />
   <img src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white" />
 </p>
-# Crop production in India is one of the most important sources of income and India is one of the top countries to produce crops. As per this project we will be analyzing some important visualization, creating a dashboard and by going through these we will get most of the insights of Crop production in India.
+
+Crop production in India is one of the most important sources of income and India is one of the top countries to produce crops. As per this project we will be analyzing some important visualization, creating a dashboard and by going through these we will get most of the insights of Crop production in India.
 
 # :chart_with_upwards_trend:TECHNOLOGY
   
   :small_blue_diamond:Data Analytics
   
   :small_blue_diamond:IBM Cognos Analytics
+  
+  :small_blue_diamond:Machine Learning
   
 # TEAM MEMBERS
 
